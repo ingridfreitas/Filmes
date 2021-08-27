@@ -1,17 +1,40 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Filmes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="pesquisa">
+    <ion-searchbar showCancelButton="focus" placeholder="Pesquisa"></ion-searchbar>
+  </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+    <ion-item-sliding *ngFor="let filme of filmes">
+      <ion-item (click)="abrir(filme)">
+        <ion-thumbnail>
+          <img [src]="filme.imagePath">
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <div class="info">
+            <h1>{{filme.nome}}</h1>
+            <p>{{filme.dataDur}}</p>
+            <div class="genero">
+              <ion-badge color="fsi" *ngFor="let genery of filme.generos">{{genery}}</ion-badge>
+            </div>
+          </div>
+        </ion-label>
+        <ion-chip color="success" outline>
+          <ion-label>{{filme.fav}}%</ion-label>
+        </ion-chip>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="fav()">
+          <ion-icon slot="icon-only" name="heart"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
