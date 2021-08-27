@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="toll">
     <ion-title>
-      Filmes
+      {{titulo}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,9 +11,9 @@
     <ion-searchbar showCancelButton="focus" placeholder="Pesquisa"></ion-searchbar>
   </div>
 
-  <ion-list>
+  <ion-list *ngIf="filmes">
     <ion-item-sliding *ngFor="let filme of filmes">
-      <ion-item (click)="abrir(filme)">
+      <ion-item (click)="abrirFilme(filme)">
         <ion-thumbnail>
           <img [src]="filme.imagePath">
         </ion-thumbnail>
@@ -22,7 +22,7 @@
             <h1>{{filme.nome}}</h1>
             <p>{{filme.dataDur}}</p>
             <div class="genero">
-              <ion-badge color="fsi" *ngFor="let genery of filme.generos">{{genery}}</ion-badge>
+              <ion-badge color="acion" *ngFor="let genery of filme.generos">{{genery}}</ion-badge>
             </div>
           </div>
         </ion-label>
@@ -31,7 +31,7 @@
         </ion-chip>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option (click)="fav()">
+        <ion-item-option color="acion" (click)="fav()">
           <ion-icon slot="icon-only" name="heart"></ion-icon>
         </ion-item-option>
       </ion-item-options>

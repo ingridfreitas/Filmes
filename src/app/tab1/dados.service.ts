@@ -9,9 +9,9 @@ export class DadosService {
 
   private dados: any = [];
 
-  guardar(id: string, dados:any): boolean{
-    if(id){
-      this.dados[id] = dados;
+  guardar(index: string, dados:any): boolean{
+    if(index){
+      this.dados[index] = dados;
       return true;
     }
     else{
@@ -19,16 +19,16 @@ export class DadosService {
     }
   }
 
-  pegar(id: string):any{
-    if(id){
-      return this.dados[id];
+  pegar(index: string):any{
+    if(index){
+      return this.dados[index];
     }
     else{
       return null;
     }
   }
 
-  deletar(id: string): boolean{
-    return delete this.dados[id];
+  deletar(index: string): boolean{
+    return delete this.dados[index];
   }
 }

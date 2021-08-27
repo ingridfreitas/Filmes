@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Filme-Info</ion-title>
+  <ion-toolbar color="toll">
+    <ion-title>{{filme.nome}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,13 +9,20 @@
     <ion-card-header>
       <img [src]="filme.imagePath">
     </ion-card-header>
-  
+
     <ion-card-content>
       <h1>{{filme.nome}}</h1>
-     <p>{{filme.dataDur}}</p>
+      <p>{{filme.dataDur}}</p>
     </ion-card-content>
-    <ion-item>
-      <ion-badge color=acion *ngFor = "let genery of filme.generos">{{genery}}</ion-badge>
-    </ion-item>
+    <div class="ed">
+      <ion-chip color="success">
+        <ion-label>{{filme.fav}}%</ion-label>
+      </ion-chip>
+    </div>
+    <div class="ba">
+      <ion-item>
+        <ion-badge color="acion" *ngFor="let genery of filme.generos">{{genery}}</ion-badge>
+      </ion-item>
+    </div>
   </ion-card>
 </ion-content>

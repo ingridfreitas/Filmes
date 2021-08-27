@@ -95,6 +95,22 @@
   --ion-color-aventura-contrast-rgb: 255,255,255;
   --ion-color-aventura-shade: #09a222;
   --ion-color-aventura-tint: #23bf3d;
+
+  --ion-color-toll: #17004d;
+  --ion-color-toll-rgb: 23,0,77;
+  --ion-color-toll-contrast: #ffffff;
+  --ion-color-toll-contrast-rgb: 255,255,255;
+  --ion-color-toll-shade: #140044;
+  --ion-color-toll-tint: #2e1a5f;
+}
+
+.ion-color-toll {
+  --ion-color-base: var(--ion-color-toll);
+  --ion-color-base-rgb: var(--ion-color-toll-rgb);
+  --ion-color-contrast: var(--ion-color-toll-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-toll-contrast-rgb);
+  --ion-color-shade: var(--ion-color-toll-shade);
+  --ion-color-tint: var(--ion-color-toll-tint);
 }
 
 .ion-color-fsi {
